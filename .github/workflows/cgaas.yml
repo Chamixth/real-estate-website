@@ -11,24 +11,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Generate API Documentation
-        run: |
-          # Downloading the swagger client
-          wget https://github.com/swaggo/swag/releases/download/v1.7.0/swag_1.7.0_Linux_x86_64.tar.gz
-          tar -xvf swag_1.7.0_Linux_x86_64.tar.gz
-          ./swag init -g apiHandlers/router.go --output docs
-          rm swag
-          rm swag_1.7.0_Linux_x86_64.tar.gz
-
       - name: Build & Push Docker Image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}evolza/message_and_inquiry_management
+          image: ${{ secrets.DOCKER_USERNAME }}chamixth/real-estate-website
           tags: latest
           registry: docker.io
-          username: ${{ secrets.CGAAS_DOCKER_USERNAME }}
-          password: ${{ secrets.CGAAS_DOCKER_ACCESSCODE }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Configure Nginx and Docker
         uses: appleboy/ssh-action@master
