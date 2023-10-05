@@ -28,4 +28,5 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           script: |
             cd /root/
+            ls
             bash ./samplescript2 real.demo.cgaas.ai 5000 80 real-estate-2 chamixth real-estate-website-2
