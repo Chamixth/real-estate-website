@@ -30,7 +30,10 @@ jobs:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.HOST_USERNAME }}
           password: ${{ secrets.HOST_PASSWORD }}
+          env:
+            MY_VARIABLE: "Hello, World!"
+
           script: |
             cd /root/
             ls
-            bash ./samplescript3.sh 
+            bash ./samplescript4.sh 
