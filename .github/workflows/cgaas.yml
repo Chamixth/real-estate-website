@@ -6,6 +6,8 @@ on:
       - main
 
 jobs:
+   env:
+      MY_VARIABLE: "Hello, World!"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -30,8 +32,7 @@ jobs:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.HOST_USERNAME }}
           password: ${{ secrets.HOST_PASSWORD }}
-          env:
-            MY_VARIABLE: "Hello, World!"
+         
 
           script: |
             cd /root/
