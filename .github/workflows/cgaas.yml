@@ -23,7 +23,7 @@ jobs:
 
       - name: Set up environment variables
         env:
-          ENV_FILE_URL: "https://raw.githubusercontent.com/Chamixth/real-estate-website-2/main/.env"
+          MY_VARIABLE: "https://raw.githubusercontent.com/Chamixth/real-estate-website-2/main/.env"
         run: echo "Setting up environment variables"
 
       - name: Configure Nginx and Docker
