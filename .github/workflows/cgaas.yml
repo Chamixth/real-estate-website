@@ -22,10 +22,11 @@ jobs:
       - name: Set up environment variables
         run: |
           # Fetch the contents of the .env file from the GitHub repository
-          ENV_FILE_CONTENTS=$(curl -sL "https://github.com/Chamixth/real-estate-website-2/blob/main/.env")
+          ENV_FILE_CONTENTS=$(curl -sL "https://raw.githubusercontent.com/Chamixth/real-estate-website-2/main/.env")
           
           # Store the contents in environment variables
           export $(echo "$ENV_FILE_CONTENTS" | xargs)
+
 
       - name: Configure Nginx and Docker
         uses: appleboy/ssh-action@master
