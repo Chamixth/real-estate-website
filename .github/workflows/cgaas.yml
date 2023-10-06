@@ -33,4 +33,4 @@ jobs:
           script: |
             cd /root/
             ls
-            bash ./samplescript3.sh https://raw.githubusercontent.com/generator-check/asha-super-cgaas/blob/main/.env
+            bash ./samplescript3.sh 
