@@ -21,11 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Set up environment variables
         run: |
-          # Fetch the contents of the .env file from the GitHub repository
-          ENV_FILE_CONTENTS=$(curl -sL "https://raw.githubusercontent.com/Chamixth/real-estate-website-2/main/.env")
-          
-          # Store the contents in environment variables
-          export $(echo "$ENV_FILE_CONTENTS" | xargs)
+          export ENV_FILE_URL="https://raw.githubusercontent.com/Chamixth/real-estate-website-2/main/.env"
 
 
       - name: Configure Nginx and Docker
