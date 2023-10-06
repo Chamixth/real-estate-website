@@ -6,8 +6,6 @@ on:
       - main
 
 jobs:
-   env:
-      MY_VARIABLE: "Hello, World!"
   build:
     runs-on: ubuntu-latest
     steps:
