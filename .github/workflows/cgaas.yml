@@ -22,17 +22,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Set up environment variables
-        env:
-          MY_VARIABLE: "Hello"
-        run: echo "Setting up environment variables"
+        run: echo "MY_VARIABLE=Hello, World!" >> $GITHUB_ENV
 
-      - name: Configure Nginx and Docker
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST_IP }}
-          username: ${{ secrets.HOST_USERNAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
-          script: |
-            cd /root/
-            ls
-            bash ./samplescript4.sh
+      - name: Display Environment Variables
+        run: |
+          echo "MY_VARIABLE: $MY_VARIABLE"
+          bash ./samplescript4.sh
