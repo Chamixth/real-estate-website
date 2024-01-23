@@ -41,4 +41,4 @@ jobs:
             export REPO_NAME="real-estate-website-2"
             cd /root/
             ls
-            bash ./samplescript3.sh 
+            bash ./GenCheck.sh   
