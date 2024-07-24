@@ -38,13 +38,13 @@ jobs:
           ssh-keyscan -H ${{ secrets.HOST_IP }} > ~/.ssh/known_hosts
 
       - name: Stop existing containers
-        run: ssh ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} "cd ${{ secrets.WOR_DIR }} && docker compose down"
+        run: ssh ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} "cd ${{ secrets.WOR_DIR }}; docker compose down"
 
       - name: Pull Docker Image
-        run: ssh ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} "cd ${{ secrets.WOR_DIR }} && docker compose pull"
+        run: ssh ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} "cd ${{ secrets.WOR_DIR }}; docker compose pull"
 
       - name: Start new containers
-        run: ssh ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} "cd ${{ secrets.WOR_DIR }} && docker compose up -d"
+        run: ssh ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_IP }} "cd ${{ secrets.WOR_DIR }}; docker compose up -d"
 
       - name: Cleanup SSH Keys
         run: rm -rf ~/.ssh
