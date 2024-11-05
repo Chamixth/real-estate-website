@@ -7,10 +7,6 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy your website files from the current directory into the NGINX document root
 COPY . /usr/share/nginx/html
 
-
-
-
-
 # Expose port 80 (the default port for HTTP)
 EXPOSE 80
 
